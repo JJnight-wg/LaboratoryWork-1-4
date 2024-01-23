@@ -105,3 +105,105 @@ namespace WpfApp1.Model
         }
     }
 }
+
+XMAIL
+
+<Window x:Class="WpfApp1.View.WindowEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.View"
+        mc:Ignorable="d"
+        Title="Сотрудники" Height="450" Width="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu>
+            <StackPanel>
+                <ListView x:Name="lvEmployee" RenderTransformOrigin="0.55,0.493" Width="695">
+                    <ListView.View>
+                        <GridView>
+                            <GridView.Columns>
+                                <GridViewColumn Header="Код" Width="80" 
+                                    DisplayMemberBinding="{Binding Id}"/>
+                                <GridViewColumn Header="Фамилия" Width="100"
+                                    DisplayMemberBinding="{Binding LastName}"/>
+                                <GridViewColumn Header="Имя" Width="90"
+                                     DisplayMemberBinding="{Binding FirstName}"/>
+                                <GridViewColumn Header="Отчество" Width="100"
+                                     DisplayMemberBinding="{Binding SecondName}"/>
+                                <GridViewColumn Header="Должность" Width="130"
+                                     DisplayMemberBinding="{Binding Title}"/>
+                                <GridViewColumn Header="Дата рождения" Width="100"
+                                    DisplayMemberBinding="{Binding BirthDay}"/>
+                                  
+
+
+                            </GridView.Columns>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </StackPanel>
+
+        </Menu>
+    </Grid>
+</Window>
+
+<Window x:Class="WpfApp1.View.WindowEmployeeTerritory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.View"
+        mc:Ignorable="d"
+        Title="Сотрудники городов" Height="450" Width="442">
+    <Grid>
+        <Menu/>
+        <StackPanel Background="#FFD8D8D8">
+            <Label Margin="5" HorizontalAlignment="Center">Список сотрудников городов</Label>
+            <ListView x:Name="lvEmployeeTerritory" Background="#FFD3CDCD">
+                <ListView.View >
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Код должности" Width="100"
+ DisplayMemberBinding="{Binding EmployeeId}"/>
+                            <GridViewColumn Header="Код города"
+ DisplayMemberBinding="{Binding TerritoryId}"/>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+    </Grid>
+</Window>
+
+
+<Window x:Class="WpfApp1.View.WindowRegion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.View"
+        mc:Ignorable="d"
+        Title="Область" Height="450" Width="410">
+    <StackPanel Background="#FFD8D8D8">
+        <Label Margin="5" HorizontalAlignment="Center">Список областей</Label>
+        <ListView x:Name="lvRegion" Background="#FFD3CDCD">
+            <ListView.View >
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Код" Width="50"
+ DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Наименование областей"
+ DisplayMemberBinding="{Binding RegionDisription}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>
+
